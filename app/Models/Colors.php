@@ -11,8 +11,7 @@ class Colors extends Model
         'color_name',
         'status',
     ];
-
-    public $timestamps=true;
+    public $timestamps = true;
 
     public function product()
     {
