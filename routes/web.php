@@ -10,22 +10,38 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', 'HomeController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
 //Login /Logout
-Route::get('authentication/getLogin', ['as' => 'getLogin', 'uses' => 'Auth\LoginController@getLogin']);
-Route::post('authentication/postLogin', ['as' => 'postLogin', 'uses' => 'Auth\LoginController@postLogin']);
-Route::get('authentication/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+Route::get('auth/get-login', [
+    'as' => 'getLogin',
+    'uses' => 'Auth\LoginController@getLogin'
+]);
+Route::post('auth/post-login', [
+    'as' => 'postLogin',
+    'uses' => 'Auth\LoginController@postLogin'
+]);
+Route::get('auth/logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
+]);
+
 //Reset Password
-Route::get('authentication/Reset', ['as' => 'Reset', 'uses' => 'Auth\ForgotPasswordController@getEmail']);
+Route::get('auth/reset', [
+    'as' => 'Reset',
+    'uses' => 'Auth\ForgotPasswordController@getEmail'
+]);
+
 //Register
-Route::get('authentication/Register', ['as' => 'Register', 'uses' => 'Auth\RegisterController@getRegiter']);
+Route::get('auth/register', [
+    'as' => 'Register',
+    'uses' => 'Auth\RegisterController@getRegiter'
+]);
+
 //Login Facebook 
 Route::get('redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('callback', 'Auth\LoginController@handleProviderCallback');
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');

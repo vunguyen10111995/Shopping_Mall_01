@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -60,11 +60,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="authentication/logout">
+                                        <a href="{!! route('logout') !!}">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action=" {!! route('logout') !!}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
