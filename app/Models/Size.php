@@ -9,6 +9,7 @@ class Size extends Model
     protected $filltable = [
         'id',
         'size_name',
+        'status',
     ];
 
     public $timestamp = false;
