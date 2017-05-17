@@ -14,8 +14,12 @@
 </div>
 <div class="clearfix"></div>
 <div class="row">
-    {{Form::open(['method' => 'POST', 'action' => 'CategoryController@store', 'data-parsley-validate class' => 'form-horizontal form-label-left',
-    'id' => 'demo-form2'])}}
+    {{Form::open([
+            'method' => 'POST', 
+            'action' => 'CategoryController@store', 
+            'data-parsley-validate class' => 'form-horizontal form-label-left',
+            'id' => 'demo-form2'
+        ]) }}
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
@@ -38,8 +42,8 @@
                             {{ Form::select('catparent',
                                 $categories->toArray(), 
                                 [
-                                'class' => 'form-control col-md-6 col-sm-6 col-xs-12',
-                                'id' => 'locID' 
+                                    'class' => 'form-control col-md-6 col-sm-6 col-xs-12',
+                                    'id' => 'locID' 
                                 ]) }}
                         </center>
                     </div>

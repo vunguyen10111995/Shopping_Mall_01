@@ -21,8 +21,12 @@
             </div>
             <div class="x_content">
                 <br/>
-                {{Form::open(['method' => 'POST', 'action' => 'FactoryController@store','data-parsley-validate class' => 'form-horizontal form-label-left',
-                'id'=>'demo-form2']) }}
+                {{Form::open([
+                        'method' => 'POST', 
+                        'action' => 'FactoryController@store',
+                        'data-parsley-validate class' => 'form-horizontal form-label-left',
+                        'id'=>'demo-form2'
+                    ]) }}
                 <div class="form-group">
                     {!! Form::label('labelcom', trans('backend.company'), array('class' => 'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                     <div class="col-md-6 col-sm-6 col-xs-12">

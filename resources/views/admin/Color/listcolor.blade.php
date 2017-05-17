@@ -32,11 +32,11 @@
         @endphp
         @foreach($color as $value)
         @php
-        $stt=$stt++; 
+            $stt=$stt++; 
         @endphp
         <tr>
-            <td>{!!$stt!!}</td>
-            <td>{!!$value->color_name!!}</td>
+            <td>{!! $stt !!}</td>
+            <td>{!! $value->color_name !!}</td>
             <td>{!!date('d-m-y h:i:s', strtotime($value->created_at)) !!}</td>
             <td>{!!date('d-m-y h:i:s', strtotime($value->updated_at)) !!}</td>
             <td>
@@ -56,7 +56,7 @@
                 {!! Form::close() !!}
             </td>
         </tr>
-        @endforeach()
+        @endforeach
     </tbody>
 </table>
 <a href="{{ action('ColorController@create') }}" class="btn btn btn-primary "> {{ trans('backend.add')}} <i class="fa fa-plus" aria-hidden="true"></i></a>

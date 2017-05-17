@@ -14,8 +14,12 @@
 </div>
 <div class="clearfix"></div>
 <div class="row">
-    {{Form::open(['method' => 'POST', 'action' => 'ColorController@store', 'data-parsley-validate class' => 'form-horizontal form-label-left',
-    'id'=>'demo-form2']) }}
+    {{Form::open([
+            'method' => 'POST', 
+            'action' => 'ColorController@store', 
+            'data-parsley-validate class' => 'form-horizontal form-label-left',
+            'id'=>'demo-form2'
+         ]) }}
     {{ Form::token() }} 
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">

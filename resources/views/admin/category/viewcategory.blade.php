@@ -21,15 +21,15 @@
             <tr>
                 <th>{{ trans('backend.status') }}</th>
                 <th>
-                     @if($value->status == 1)
-                    {{ Form::label('txthienthi', trans('backend.show'), array('class' => 'label label-success')) }}
-                    @else
-                    {{ Form::label('txthan', trans('backend.hide'), array('class' => 'label label-danger')) }}
-                    @endif
-                </th>
-            </tr>
-        </div>
-        @endforeach
-    </tbody>
+                   @if($value->status == 1)
+                   {{ Form::label('txthienthi', trans('backend.show'), array('class' => 'label label-success')) }}
+                   @else
+                   {{ Form::label('txthan', trans('backend.hide'), array('class' => 'label label-danger')) }}
+                   @endif
+               </th>
+           </tr>
+       </div>
+       @endforeach
+   </tbody>
 </table>
 </div>

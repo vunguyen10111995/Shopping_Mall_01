@@ -3,7 +3,7 @@
     <tbody>
         @foreach($factory as $value)
         <tr>
-        <td>{{ trans('backend.factory-name') }}</td>
+            <td>{{ trans('backend.factory-name') }}</td>
             <td>{!! $value->factory_name !!}</td>
         </tr>
         <tr>
