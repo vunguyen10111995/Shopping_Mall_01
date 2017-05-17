@@ -27,14 +27,14 @@ class SizeController extends Controller
         $size->size_name = $request->size;
         $size->save();
         return redirect()->route('size-list.index')
-        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm size thành công']) ;
+        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm size thành công']);
     }
     public function destroy($id)
     {
           $size = Size::findOrFail($id);
           $size->delete();
           return redirect()->route('size-list.index')
-          ->with(['flash_level' => 'primary', 'flash_message' => 'Xóa size thành công']) ;
+          ->with(['flash_level' => 'primary', 'flash_message' => 'Xóa size thành công']);
     }
     public function edit(Request $request)
     {
@@ -42,7 +42,7 @@ class SizeController extends Controller
         $parent = Size::select('size_name', 'id')->get()->toArray();
         return view('admin.size.updatesize', compact('size', 'parent'));
     }
-    public function xem(Request $request)
+    public function show(Request $request)
     {
           $size = Size::where('id', $request->id)
           ->select('id', 'size_name', 'status', 'created_at', 'updated_at')->get();
@@ -56,6 +56,6 @@ class SizeController extends Controller
           $size->status = $request->status;
           $size->save();
           return redirect()->route('size-list.index')
-          ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật size thành công']) ;
+          ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật size thành công']);
     }
 }

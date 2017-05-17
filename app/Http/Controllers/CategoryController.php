@@ -35,19 +35,19 @@ class CategoryController extends Controller
         $cate->status=$request->status;
         $cate->save();
         return redirect()->route('category-list.index')
-        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm danh mục thành công']) ;
+        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm danh mục thành công']);
     }
     public function destroy($id)
     {
-          $parent = Categories::where('parent_id', $id)->count();
+        $parent = Categories::where('parent_id', $id)->count();
         if ($parent == 0) {
             $cate = Categories::find($id);
             $cate->delete();
             return redirect()->route('category-list.index')
-            ->with(['flash_level' => 'primary', 'flash_message' => 'Xoá danh mục thành công']);
+            ->with(['flash_level' => 'primary', 'flash_message' => 'Xóa danh mục thành công']);
         } else {
             return redirect()->route('category-list.index')
-            ->with(['flash_level' => 'danger', 'flash_message' => 'Không được xóa danh mục này']);
+            ->with(['flash_level' => 'primary', 'flash_message' => 'Không được xóa danh mục này']);
         }
     }
     public function update($id, Request $request)
@@ -57,10 +57,10 @@ class CategoryController extends Controller
         $cate->parent_id = $request->catparent;
         $cate->status = $request->status;
         $cate->save();
-          return redirect()->route('category-list.index')
-          ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật danh mục thành công']) ;
+        return redirect()->route('category-list.index')
+        ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật danh mục thành công']);
     }
-    public function xem(Request $request)
+    public function show(Request $request)
     {
           $category = Categories::where('id', $request->id)
           ->select('cate_name', 'id', 'parent_id', 'created_at', 'updated_at', 'status')->get();

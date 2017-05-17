@@ -27,17 +27,17 @@ class FactoryController extends Controller
         $factory->factory_website = $request->website;
         $factory->status = $request->status;
         $factory->save();
-        return redirect()->route('factory-list.index')
-        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm tên công ty thành công']) ;
+        return redirect()->route('category-list.index')
+        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm thông tin công ty thành công']);
     }
     public function destroy($id)
     {
           $factory = Factory::findOrFail($id);
           $factory->delete();
-          return redirect()->route('factory-list.index')
-          ->with(['flash_level' => 'primary', 'flash_message' => 'Xóa tên công ty thành công']) ;
+          return redirect()->route('category-list.index')
+          ->with(['flash_level' => 'primary', 'flash_message' => 'Xóa thông tin công ty thành công']);
     }
-    public function xem(Request $request)
+    public function show(Request $request)
     {
           $factory = Factory::where('id', $request->id)
           ->select('factory_name', 'factory_logo', 'factory_website', 'status', 'created_at', 'updated_at')->get();
@@ -59,7 +59,7 @@ class FactoryController extends Controller
           $factory->factory_website = $request->website;
           $factory->status = $request->status;
           $factory->save();
-          return redirect()->route('factory-list.index')
-          ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật tên công ty thành công']) ;
+          return redirect()->route('category-list.index')
+          ->with(['flash_level' => 'primary', 'flash_message' => 'Cập nhật thông tin công ty thành công']);
     }
 }

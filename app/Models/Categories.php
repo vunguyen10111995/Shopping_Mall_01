@@ -13,7 +13,7 @@ class Categories extends Model
         'status',
     ];
 
-    public $timestamps=true;
+    public $timestamps = true;
 
     public function banner()
     {

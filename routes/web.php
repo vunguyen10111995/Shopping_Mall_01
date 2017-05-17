@@ -25,20 +25,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('backend/index', ['as' => 'backend', 'uses' => 'ThanhVienController@test']);
 //Categoty
 Route::resource('category-list', 'CategoryController');
-Route::get('sua', 'CategoryController@edit');
-Route::get('xem', 'CategoryController@xem');
+Route::get('edit', 'CategoryController@edit');
+Route::get('show', 'CategoryController@show');
 //Color
 Route::resource('color-list', 'ColorController');
-Route::get('sua-color', 'ColorController@edit');
-Route::get('xem-color', 'ColorController@xem');
+Route::get('edit-color', 'ColorController@edit');
+Route::get('show-color', 'ColorController@show');
 //Size
 Route::resource('size-list', 'SizeController');
-Route::get('sua-size', 'SizeController@edit');
-Route::get('xem-size', 'SizeController@xem');
+Route::get('edit-size', 'SizeController@edit');
+Route::get('show-size', 'SizeController@show');
 //factory
 Route::resource('factory-list', 'FactoryController');
-Route::get('xem-factory', 'FactoryController@xem');
-Route::get('editfactory', 'FactoryController@edit');
+Route::get('show-factory', 'FactoryController@show');
 //Payment
 Route::resource('Payment', 'PaymentController');
 //Login /Logout

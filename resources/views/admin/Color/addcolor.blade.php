@@ -36,7 +36,7 @@
                     {!! Form::checkbox('status', '1', true) !!}
                 </div>
                 <div class="form-group">
-                {!! Form::button(trans('backend.add'), array('class' => 'btn btn-primary glyphicon glyphicon-plus', 'id' => 'add')) !!}   
+                {!! Form::submit(trans('backend.add'), array('class' => 'btn btn-primary glyphicon glyphicon-plus', 'id' => 'add')) !!}   
             </div>
         </div>
     </div>

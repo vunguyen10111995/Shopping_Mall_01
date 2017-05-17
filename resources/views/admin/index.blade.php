@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/metisMenu/dist/metisMenu.min.css') }}">
-    <link href="{!!url('admin/bootstrap/dist/css/bootstrap.min.css')!!}" rel="stylesheet">
+    <link href="{!!url('admin/css/bootstrap.min.css')!!}" rel="stylesheet">
     <link href="{!!url('admin/font-awesome/css/font-awesome.min.css')!!}" rel="stylesheet">
-    <link href="{!!url('admin/build/css/custom.min.css')!!}" rel="stylesheet">
-    <link href="{!!url('admin/jquery-ui/jquery-ui.css')!!}" rel="stylesheet">
+    <link href="{!!url('admin/css/custom.min.css')!!}" rel="stylesheet">
+    <link href="{!!url('admin/css/jquery-ui.css')!!}" rel="stylesheet">
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -267,19 +266,18 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="{{ asset('admin/jquery/dist/jquery.min.js') }}"></script>
-            <script src="{!!url('admin/bootstrap/dist/js/bootstrap.min.js')!!}"></script> 
-            <script src="{!!url('admin/jquery-ui/jquery-ui.js')!!}"></script> 
+             <script type="text/javascript" src="{{ asset('admin/js/jquery.min.js') }}"></script> 
+            <script src="{!!url('admin/js/bootstrap.min.js')!!}"></script> 
+            <script src="{!!url('admin/js/jquery-ui.js')!!}"></script> 
             <script src="{!!url('admin/js/main.js')!!}"></script>
             <script src="{!!url('admin/js/logo.js')!!}"></script>
-            <script src="{!!url('admin/build/js/custom.min.js')!!}"></script>
+            <script src="{!!url('admin/js/custom.min.js')!!}"></script>
             <script src="{!!url('admin/js/edit.js')!!}"></script>
             <script src="{!!url('admin/js/list.js')!!}"></script>
             <script src="{!!url('admin/js/color.js')!!}"></script>
             <script src="{!!url('admin/js/editcolor.js')!!}"></script>
             <script src="{!!url('admin/js/size.js')!!}"></script>
             <script src="{!!url('admin/js/editsize.js')!!}"></script>
-            <script src="{!!url('admin/js/ckeditor/ckeditor.js')!!}"></script>    
             <script src="{!!url('admin/tinymce/tinymce.min.js')!!}"></script>
             <script src="{!!url('admin/tinymce/plugins/advlist/plugin.min.js')!!}"></script>
             <script>

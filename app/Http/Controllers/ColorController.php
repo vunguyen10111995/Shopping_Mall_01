@@ -26,7 +26,7 @@ class ColorController extends Controller
         $color->status = $request->status;
         $color->save();
         return redirect()->route('color-list.index')
-        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm màu thành công']) ;
+        ->with(['flash_level' => 'primary', 'flash_message' => 'Thêm màu thành công']);
     }
     public function destroy($id)
     {
@@ -41,7 +41,7 @@ class ColorController extends Controller
         $parent = Colors::select('Color_name', 'id', 'Status')->get()->toArray();
         return view('admin.Color.updatecolor', compact('color', 'parent'));
     }
-    public function xem(Request $request)
+    public function show(Request $request)
     {
           $color = Colors::where('id', $request->id)
           ->select('id', 'Color_name', 'Status', 'created_at', 'updated_at')->get();

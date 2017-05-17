@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link href="{!! asset('bower_components/font-awesome/css/font-awesome.css') !!}" rel="stylesheet">
+    <link href="{!! asset('frontend/css/font-awesome.css') !!}" rel="stylesheet">
     <link href="{!! asset('frontend/css/bootstrap.css') !!}" rel="stylesheet">
     <link href="{!! asset('frontend/css/slick.css') !!}" rel="stylesheet">
     <link href="{!! asset('frontend/css/default-theme.css') !!}" rel="stylesheet">
