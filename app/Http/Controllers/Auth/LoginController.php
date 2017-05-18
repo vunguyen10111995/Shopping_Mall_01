@@ -56,10 +56,10 @@ class LoginController extends Controller
 
         $rememeber = $request->input('Remember');
         if (Auth::attempt($auth, $rememeber)) {
-            if ((Auth::user()->Level) == 1) {
-                return redirect('backend/index');
+            if ((Auth::user()->level) == 1) {
+                return redirect('backend');
             } else {
-                Auth::user()->Full_name;
+                return redirect('/');
             }
         } else {
             $message = trans('messages.mess');

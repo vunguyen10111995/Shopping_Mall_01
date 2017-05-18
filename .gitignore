@@ -9,3 +9,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+/thumbs
+/uploads
+/filemanager
+/public/admin
+/public/

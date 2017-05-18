@@ -20,7 +20,7 @@
                     <h4 class="aa-product-title"><a href="#">{{ trans('fontend.polo t-shirt') }}</a></h4>
                     <span class="aa-product-price">{{ trans('fontend.45,50s') }}</span><span class="aa-product-price"><del>{{ trans('fontend.65,50s') }}</del></span>
                   </figcaption>
-                </figure>                 
+                </figure>
                 <div class="aa-product-hvr-content">
                   <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                   <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
