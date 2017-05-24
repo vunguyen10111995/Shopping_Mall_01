@@ -2,13 +2,19 @@
 
 namespace App\Models;
 
+use App\ProductImages;
+use App\Models\Colors;
+use App\Models\Size;
+use App\Models\Factory;
+use App\Models\Categories;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
     protected $data = [
         'create_at',
-        'update_at'
+        'update_at',
     ];
 
     protected $filltable = [
@@ -30,6 +36,23 @@ class Product extends Model
      ];
 
     public $timestamp = true;
+
+    public function scopeProduct($query)
+    {
+        $product = $query->select('id', 'product_name', 'product_image', 'price', 'saleoff')
+                         ->orderBy('id', 'DESC')->skip(0)->take(4)->get();
+
+        return  $product;
+    }
+
+    public function scopelistProduct($query)
+    {
+        $listProduct = $query->join('categories', 'cate_id', '=', 'categories.id')
+                            ->join('factories', 'factory_id', '=', 'factories.id')
+                            ->select('products.*', 'factories.factory_name', 'categories.cate_name')->get();
+
+        return $listProduct;
+    }
 
     public function cate()
     {

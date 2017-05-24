@@ -13,11 +13,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="{!! url('/') !!}" >{{ trans('backend.home') }}</a></li>
-                        @foreach( $categories as $value )
-                        <li><a href="" >{!! $value->cate_name !!}<span class="caret"></span></a>
+                        @foreach( $category as $value )
+                        <li><a href="{!! url('option-category', [$value->id, $value->cate_name])!!}">{!! $value->cate_name !!}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 @foreach($value->child as $child)
-                                <li><a href="{!! url('loai-san-pham', [$child->id,$child->cate_name])!!}">{!! $child->cate_name !!}</a>
+                                <li><a href="{!! url('option-category', [$child->id,$child->cate_name])!!}">{!! $child->cate_name !!}</a>
                                 </li> 
                                 @endforeach
                             </ul>

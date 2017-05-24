@@ -15,6 +15,13 @@ class Categories extends Model
 
     public $timestamps = true;
 
+    public function scopeCategory($query)
+    {
+        $category = $query->where('parent_id', 0)->get();
+
+        return  $category;
+    }
+
     public function banner()
     {
         return $this->hasMany(Banner::class);

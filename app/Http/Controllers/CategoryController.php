@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Models\Categories;
+use App\Models\Product;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -74,11 +76,24 @@ class CategoryController extends Controller
 
         return view('admin.category.viewcategory', compact('category', 'parent'));
     }
-    public function frontend(Request $request)
-    {
-        $category = Categories::where('parent_id', 0);
-        $cate_parent = Categories::where('parent_id', $request->id);
+    
 
-        return view('frontend.blocks.section-menu', compact('category', 'cate_parent'));
+    public function optionCategory($id)
+    {
+        $productCategory = Product::select(
+            'id',
+            'product_name',
+            'product_image',
+            'cate_id',
+            'price',
+            'saleoff',
+            'start_sale',
+            'end_sale'
+        )->where('cate_id', $id)
+         ->get();
+
+        $category = Categories::category();
+
+        return view('frontend.blocks.listproduct', compact('productCategory', 'category'));
     }
 }
