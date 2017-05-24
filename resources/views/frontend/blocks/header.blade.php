@@ -10,17 +10,22 @@
                         </div>
                         <div class="aa-header-top-right">
                             <ul class="aa-head-top-nav-right">
-                            <li class="hidden-xs"><a href="wishlist.html">{{ trans('fontend.wishlist') }}</a></li>
+                                <li class="hidden-xs"><a href="wishlist.html">{{ trans('fontend.wishlist') }}</a></li>
                                 <li class="hidden-xs"><a href="cart.html">{{ trans('fontend.mycart') }}</a></li>
                                 <li class="hidden-xs"><a href="checkout.html">{{ trans('fontend.checkout')}}</a></li>
-                                <li><a href="" data-toggle="modal" data-target="#login-modal">{{ trans('fontend.login') }}</a></li>
+                                    @if (Auth::check())
+                                    <li>{!! Auth::user()->name !!}</li> |
+                                    <li class="hidden-xs"><a href="{{ url('auth/logout') }}">{{ trans('fontend.logout')}}</a></li>
+                                    @else
+                                    <li><a href="{{ url('auth/get-login') }}" target="_blank">{{ trans('fontend.login') }}</a></li>
+                                    <li class="hidden-xs"><a href="{{ url('auth/register') }}">{{ trans('fontend.register')}}</a></li>
+                                    @endif
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <div class="aa-header-bottom">
         <div class="container">
             <div class="row">
@@ -63,7 +68,7 @@
                     </div>
                     <div class="aa-search-box">
                         <form action="">
-                            <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                            <input type="text" name="" id="" placeholder="Search product!">
                             <button type="submit"><span class="fa fa-search"></span></button>
                         </form>
                     </div>        

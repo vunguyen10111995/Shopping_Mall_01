@@ -25,20 +25,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('backend/index', ['as' => 'backend', 'uses' => 'ThanhVienController@test']);
 //Categoty
 Route::resource('category-list', 'CategoryController');
-Route::get('sua', 'CategoryController@edit');
-Route::get('xem', 'CategoryController@xem');
+Route::get('edit', 'CategoryController@edit');
+Route::get('show', 'CategoryController@show');
 //Color
 Route::resource('color-list', 'ColorController');
-Route::get('sua-color', 'ColorController@edit');
-Route::get('xem-color', 'ColorController@xem');
+Route::get('edit-color', 'ColorController@edit');
+Route::get('show-color', 'ColorController@show');
 //Size
 Route::resource('size-list', 'SizeController');
-Route::get('sua-size', 'SizeController@edit');
-Route::get('xem-size', 'SizeController@xem');
+Route::get('edit-size', 'SizeController@edit');
+Route::get('show-size', 'SizeController@show');
 //factory
 Route::resource('factory-list', 'FactoryController');
-Route::get('xem-factory', 'FactoryController@xem');
+Route::get('show-factory', 'FactoryController@show');
 //product
+Route::get('show-factory', 'FactoryController@show');
+Route::get('editfactory', 'FactoryController@edit');
 Route::resource('product-list', 'ProductController');
 Route::get('view-product', 'ProductController@show');
 //Payment
@@ -66,10 +68,14 @@ Route::get('auth/register', [
     'as' => 'Register',
     'uses' => 'Auth\RegisterController@getRegiter'
 ]);
-//Login Facebook 
+//Login Facebook
 Route::get('redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('callback', 'Auth\LoginController@handleProviderCallback');
 Route::get('/', 'HomeController@index');
-//ủe
+//user
 Route::resource('User', 'UserController');
 Route::get('user-search', 'UserController@search')->name('search.user');
+// Search product
+Route::get('pro-search', 'HomeController@searchpro')->name('search.pro');
+//Option  Category
+Route::get('option-category/{id}/{cate_name}', ['as' => 'optioncate', 'uses' => 'CategoryController@optionCategory']);

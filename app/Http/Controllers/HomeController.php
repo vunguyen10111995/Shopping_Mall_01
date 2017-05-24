@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Categories;
 
 class HomeController extends Controller
 {
@@ -18,7 +20,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $category = Categories::category();
+        $product = Product::product();
+                
+        return view('frontend.index', compact('product', 'category'));
     }
     public function login()
     {

@@ -9,6 +9,7 @@
     <link href="{!! asset('admin/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('admin/css/custom.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('admin/css/jquery-ui.css') !!}" rel="stylesheet">
+    <link href="{!! asset('css/my.css') !!}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{!! asset('admin/sweetalert/dist/sweetalert.css') !!}">
 </head>
 <body class="nav-md">
@@ -45,8 +46,8 @@
                                 </li>
                                 <li><a><i class="fa fa-shirtsinbulk" aria-hidden="true"></i> {{ trans('backend.product') }} <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="#">{{ trans('backend.list_product') }}</a></li>
-                                        <li><a href="#">{{ trans('backend.add_product') }}</a></li>
+                                        <li><a href="{{  action('ProductController@index')  }}">{{ trans('backend.list_product') }}</a></li>
+                                        <li><a href="{{  action('ProductController@create')  }}">{{ trans('backend.add_product') }}</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-paint-brush" aria-hidden="true"></i> {{ trans('backend.color') }}<span class="fa fa-chevron-down"></span></a>
@@ -285,6 +286,20 @@
         </div>
     </div>
 
+    <div class="modal fade" id="view-product">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="view-product">   
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         var baseURL ="{!! url('/') !!}";
     </script>
@@ -297,6 +312,7 @@
     <script src="{!! asset('admin/tinymce/plugins/advlist/plugin.min.js') !!}"></script>
     <script src="{!! asset('admin/js/main.js') !!}"></script>
     <script src="{!! asset('admin/js/main1.js') !!}"></script>
+    <script src="{!! asset('admin/js/product.js') !!}"></script>
     <script src="{!! asset('admin/js/logo.js') !!}"></script>
     <script src="{!! asset('admin/js/custom.min.js') !!}"></script>
     <script src="{!! asset('admin/js/func_ckfinder.js') !!}"></script>

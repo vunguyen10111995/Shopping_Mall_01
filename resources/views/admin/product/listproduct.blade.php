@@ -39,45 +39,46 @@
         @php 
             $stt = 0;
         @endphp    
-        @foreach($categories as $value)
-        @php 
-        $htmlSize=null;
-        $htmlColor=null;
+        @foreach ($categories as $value)
+        @php
+        $htmlSize = null;
+        $htmlColor = null;
             $stt = $stt+1;
-          if(!empty($value->size_id)){
+        if (!empty($value->size_id)) {
             $listsize = unserialize($value->size_id);
-            if(count($listsize)>0){
-                if(count($listsize) == 1){
-                     $data =   \App\Models\Size::where('id',$listsize)->get();
-                }else{
-                      $data =   \App\Models\Size::whereIn('id',$listsize)->get(); 
+            if (count($listsize) > 0) {
+                if (count($listsize) == 1) {
+                    $data = \App\Models\Size::where('id', $listsize)->get();
+                } else {
+                    $data = \App\Models\Size::whereIn('id', $listsize)->get(); 
                 }
             }
-              if(!empty( $data)){
-                foreach ($data as $key => $valueSize) {
-                       $htmlSize .=  '<span class="sizze">' .$valueSize->size_name .'<span>';
+                if (!empty($data)) {
+                    foreach ($data as $key => $valueSize) {
+                       $htmlSize .= '<span class="sizze">'.$valueSize->size_name.'<span>';
                 }
             }
-          }
-          if(!empty($value->color_id)){
+        }
+
+        if (!empty($value->color_id)) {
             $listcolor = unserialize($value->color_id);
-            if(count($listcolor) > 0){
-                if(count($listcolor) == 1){
-                    $listcolor =[$listcolor];
+            if (count($listcolor) > 0) {
+                if (count($listcolor) == 1) {
+                    $listcolor = [$listcolor];
                 }
-                  $dataColer =   \App\Models\Colors::whereIn('id', $listcolor)->get();
+                    $dataColer = \App\Models\Colors::whereIn('id', $listcolor)->get();
                 }
-              if(!empty( $dataColer)){
+              if (!empty( $dataColer)) {
                 foreach ($dataColer as $key => $valueColor) {
-                        $htmlColor.=  '<span class="sizze">' .$valueColor->color_name .'<span>';
+                        $htmlColor.= '<span class="sizze">'.$valueColor->color_name.'<span>';
                 }
             }
-          }
+        }
         @endphp
         <tr>
             <td>{!! $stt !!}</td>
-            <td>{!! ($htmlSize)!!}</td>
-            <td>{!! $htmlColor!!}</td>
+            <td>{!! $htmlSize !!}</td>
+            <td>{!! $htmlColor !!}</td>
             <td>{!! $value->cate_name !!}</td>
             <td>{!! $value->product_name !!}</td>
             <td>{!! $value->factory_name !!}</td>
@@ -90,15 +91,32 @@
             <td>{!! date('d-m-y h:i:s', strtotime($value->updated_at)) !!}</td>
             <td>
                 @if($value->status == 1)
-                {{ Form::label('txthienthi', trans('backend.show'), array('class' => 'label label-success')) }}
+                    {{ Form::label('txthienthi',
+                        trans('backend.show'),
+                        array('class' => 'label label-success'))
+                    }}
                 @else
-                {{ Form::label('txthan', trans('backend.hide'), array('class' => 'label label-danger')) }}
+                    {{ Form::label('txthan',
+                        trans('backend.hide'),
+                        array('class' => 'label label-danger'))
+                    }}
                 @endif
             </td>
             <td>
-                {!!Form::open(array('route' => array('product-list.destroy', $value->id), 'method' => 'DELETE', 'id' => 'delete')) !!} 
-                    {{ Form::button(trans('backend.view'), array('class' => 'btn btn btn-success viewproduct fa fa-list', 'data-id' => $value->id)) }}
-                    <a href="{!!route('product-list.edit',$value->id)!!}"  class="btn btn-sm btn-primary">{{trans('backend.edit')}}</a>
+                {!!Form::open(['route' => [
+                        'product-list.destroy',
+                        $value->id
+                    ],
+                    'method' => 'DELETE',
+                    'id' => 'delete'
+                ])
+            !!} 
+                    {{ Form::button(trans('backend.view'), [
+                            'class' => 'btn btn btn-success viewproduct fa fa-list',
+                            'data-id' => $value->id
+                        ])
+                    }}
+                    <a href="{!!route('product-list.edit', $value->id)!!}"  class="btn btn-sm btn-primary">{{ trans('backend.edit')}}</a>
                     <button onclick="return xacnhanxoa(trans('backend.areyouwantdelete'))" type="submit"  id="delete" class="btn btn-danger btn-sm">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>{{ trans('backend.delete') }}
                     </button>
