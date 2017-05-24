@@ -41,6 +41,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function isAdmin()
+    {
+        return $this->level == 2;
+    }
+
     public function like()
     {
         return $this->hasMany(Like::class);

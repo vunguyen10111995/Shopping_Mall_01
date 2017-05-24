@@ -204,7 +204,7 @@
                             <div class="aa-cartbox-info">
                                 <h4><a href="#">Product Name</a></h4>
                                 <p>1 x $250</p>
-                            </div>                    
+                            </div>
                         </li>                                      
                     </ul>
                 </div>                            

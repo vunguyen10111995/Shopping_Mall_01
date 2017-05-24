@@ -13,7 +13,7 @@
             <div class="aa-catg-head-banner-content">
                 <h2>{{trans('fontend.contact')}}</h2>
                 <ol class="breadcrumb">       
-                <li class="active">{{ trans('fontend.contact') }}</li>
+                    <li class="active">{{ trans('fontend.contact') }}</li>
                 </ol>
             </div>
         </div>
@@ -35,76 +35,116 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="aa-contact-address-left">
-                                    <form class="comments-form contact-form" action="">
+                                    {{ Form::open([
+                                        'method' => 'POST',
+                                        'action' => 'BlocksController@store',
+                                        'class' => 'comments-form contact-form',
+                                        'id'=>'demo-form2'
+                                        ]) }}
+                                        <div class="row">
+                                            <div class="error">
+                                                @if ($errors->has('name'))
+                                                    <span class="label label-danger">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    {!! Form::text('name', $value = null, $attribute = ['class' => 'form-control', "placeholder" => trans('messages.yourname')]) !!}  
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="error1">
+                                                @if ($errors->has('email'))
+                                                    <span class="label label-danger">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                                <div class="form-group">
+                                                    {!! Form::email('email', $value = ' ' , $attributes = ['class' => 'form-control', "placeholder" => trans('messages.pleaseemail')]) !!}
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">                        
-                                                  <input type="text" placeholder="Your Name" class="form-control">
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                            <div class="form-group">                        
-                                              <input type="email" placeholder="Email" class="form-control">
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">                        
-                                          <input type="text" placeholder="Subject" class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="form-group">                        
-                                      <input type="text" placeholder="Company" class="form-control">
-                                  </div>
-                              </div>
-                          </div>                  
-                          <div class="form-group">                        
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                            <div class="error2">
+                                                @if ($errors->has('txtSubject'))
+                                                    <span class="label label-danger">
+                                                        <strong>{{ $errors->first('txtSubject') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                                <div class="form-group">
+                                                    {!! Form::text('txtSubject', $value = null, $attribute = ['class' => 'form-control', "placeholder" => trans('messages.subject')]) !!}  
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="error3">
+                                                @if ($errors->has('txtCompany'))
+                                                    <span class="label label-danger">
+                                                        <strong>{{ $errors->first('txtCompany') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                                <div class="form-group">
+                                                    {!! Form::text('txtCompany', $value = null, $attribute = ['class' => 'form-control', "placeholder" => trans('messages.company')]) !!}  
+                                                </div>
+                                            </div>
+                                        </div>                  
+                                        <div class="form-group">
+                                        <div class="error4">
+                                                @if ($errors->has('txtMessage'))
+                                                <span class="label label-danger">
+                                                    <strong>{{ $errors->first('txtMessage') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            {{ Form::textarea('txtMessage', null, ['size' => '30x5', 'class' => 'form-control']) }}
+                                        </div>
+                                        {!! Form::button(trans('messages.contact'), ['class' => 'aa-secondary-btn', 'type' => 'submmit']) !!} 
+                                        {{ Form::close() }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="aa-contact-address-right">
+                                        <address>
+                                            <h4>{{ trans('fontend.dailyshop') }}</h4>
+                                            <p>{{ trans('fontend.loremispum') }}</p> 
+                                            <p><span class="fa fa-home"></span>{{ trans('fontend.434') }}</p>
+                                            <p><span class="fa fa-phone"></span>{{ trans('fontend.+ 021.343.7575') }}</p>
+                                            <p><span class="fa fa-envelope"></span>{{ trans('fontend.email') }}</p>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <button class="aa-secondary-btn">{{ trans('fontend.send') }}</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="aa-contact-address-right">
-                    <address>
-                        <h4>{{ trans('fontend.dailyshop') }}</h4>
-                        <p>{{ trans('fontend.loremispum') }}</p> 
-                        <p><span class="fa fa-home"></span>{{ trans('fontend.434') }}</p>
-                        <p><span class="fa fa-phone"></span>{{ trans('fontend.+ 021.343.7575') }}</p>
-                        <p><span class="fa fa-envelope"></span>{{ trans('fontend.email') }}</p>
-                    </address>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="aa-subscribe">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="aa-subscribe-area">
-                    <h3>{{trans('fontend.subscribe')}} </h3>
-                    <p>{{trans('fontend.loremispum')}}</p>
-                    <form action="" class="aa-subscribe-form">
-                        <input type="email" name="" id="" placeholder="Enter your Email">
-                        <input type="submit" value="Subscribe">
-                    </form>
+    </section>
+    <section id="aa-subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-subscribe-area">
+                        <h3>{{trans('fontend.subscribe')}} </h3>
+                        <p>{{trans('fontend.loremispum')}}</p>
+                        <form action="" class="aa-subscribe-form">
+                            <input type="email" name="" id="" placeholder="Enter your Email">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-@include('frontend.blocks.footer')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="{!! asset('frontend/js/bootstrap.js') !!}"></script>
-<script src="{!! asset('frontend/js/jquery.simpleGallery.js') !!}"></script>
-<script src="{!! asset('frontend/js/jquery.simpleLens.js') !!}"></script>
-<script src="{!! asset('frontend/js/slick.js') !!}"></script>
-<script src="{!! asset('frontend/js/custom.js') !!}"></script>
+    </section>
+    @include('frontend.blocks.footer')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <script src="{!! asset('frontend/js/bootstrap.js') !!}"></script>
+    <script src="{!! asset('frontend/js/jquery.simpleGallery.js') !!}"></script>
+    <script src="{!! asset('frontend/js/jquery.simpleLens.js') !!}"></script>
+    <script src="{!! asset('frontend/js/slick.js') !!}"></script>
+    <script src="{!! asset('frontend/js/custom.js') !!}"></script>

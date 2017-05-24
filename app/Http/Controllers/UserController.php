@@ -30,7 +30,7 @@ class UserController extends Controller
     {
          return view('admin.User.adduser');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
