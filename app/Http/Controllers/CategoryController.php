@@ -90,7 +90,7 @@ class CategoryController extends Controller
             'start_sale',
             'end_sale'
         )->where('cate_id', $id)
-         ->get();
+        ->get();
 
         $category = Categories::category();
 

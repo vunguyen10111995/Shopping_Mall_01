@@ -15,7 +15,6 @@ return [
     'web' => 'Web',
     'logo' => 'Logo',
     'list_user' => 'List User',
-    'company' => 'Company',
     'parentname' => 'Parent Category Name',
     'add_user' => 'Add User',
     'category' => 'Category',

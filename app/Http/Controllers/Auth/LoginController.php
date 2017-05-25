@@ -9,6 +9,8 @@ use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Auth;
 use Socialite;
+use App\Models\Categories;
+use App\Models\Product;
 
 class LoginController extends Controller
 {
@@ -70,7 +72,10 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return view('frontend.index');
+        $category = Categories::category();
+        $product = Product::product();
+
+        return view('frontend.index', compact('category', 'product'));
     }
     /**
      * Redirect the user to the GitHub authentication page.

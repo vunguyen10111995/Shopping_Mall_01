@@ -16,6 +16,7 @@ Route::post('/language', 'LanguageController@changeLanguage');
 
 Route::get('backend', 'BlocksController@index');
 Route::get('contact', ['as' => 'frontend', 'uses' => 'BlocksController@contact']);
+Route::post('contactStore', ['as' => 'contact', 'uses' => 'BlocksController@store']);
 Route::get('about', ['as' => 'frontend', 'uses' => 'BlocksController@about']);
 
 Auth::routes();
