@@ -1,4 +1,4 @@
-<?php 
+<?php
 return [
     'admin' => 'Admin',
     'home' => 'Home',
@@ -113,5 +113,6 @@ return [
     'addproductsuccess' => 'Add product success',
     'hide' => 'Hide',
     'deleteproductsuccess' => 'Delete product success',
-    'updateproductsuccess' => 'Update product success'
+    'updateproductsuccess' => 'Update product success',
+    'sort' => 'Sort',
 ];

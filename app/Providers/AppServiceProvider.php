@@ -8,6 +8,7 @@ use App\Models\Categories;
 use App\Models\Product;
 use DB;
 use Illuminate\Http\Request;
+use App\Models\Factory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,9 +17,13 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Request $request)
+    public function boot()
     {
-        //
+
+        $factories = Factory::all();
+        view()->share([
+          'factories' => $factories,
+         ]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Categories;
+use App\Models\Factory;
 
 class HomeController extends Controller
 {
@@ -18,12 +19,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $category = Categories::category();
         $product = Product::product();
-                
-        return view('frontend.index', compact('product', 'category'));
+        $factories = Factory::all();
+
+        return view('frontend.index', compact('product', 'category', 'factories'));
     }
     public function login()
     {

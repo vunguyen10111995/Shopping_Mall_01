@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Categories;
 use App\Models\Product;
 use DB;
+use App\Models\Factory;
 
 class CategoryController extends Controller
 {
@@ -76,7 +77,7 @@ class CategoryController extends Controller
 
         return view('admin.category.viewcategory', compact('category', 'parent'));
     }
-    
+
 
     public function optionCategory($id)
     {
@@ -93,7 +94,8 @@ class CategoryController extends Controller
         ->get();
 
         $category = Categories::category();
+        $factories = Factory::factory();
 
-        return view('frontend.blocks.listproduct', compact('productCategory', 'category'));
+        return view('frontend.blocks.listproduct', compact('productCategory', 'category', 'factories'));
     }
 }

@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $user = User::all();
-        
+
         return view('admin.User.listuser', compact('user'));
     }
 
@@ -98,7 +98,7 @@ class UserController extends Controller
         $user->level = $request->level;
         $user->status = $request->status;
         $user->save();
-            
+
         return redirect()->route('User.index')
                          ->with(['flash_level' => 'success', 'flash_message' => trans('messages.success')]);
     }
