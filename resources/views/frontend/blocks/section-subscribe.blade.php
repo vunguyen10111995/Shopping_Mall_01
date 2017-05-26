@@ -5,10 +5,15 @@
                 <div class="aa-subscribe-area">
                     <h3>{{ trans('fontend.subscribe') }}</h3>
                     <p>{{ trans('fontend.loremispum') }}</p>
-                    <form action="" class="aa-subscribe-form">
-                        <input type="email" name="" id="" placeholder="Enter your Email">
-                        <input type="submit" value="Subscribe">
-                    </form>
+                    {{ Form::open([
+                        'method' => 'POST',
+                        'action' => 'BlocksController@subcrice',
+                        'class' => 'aa-subscribe-form',
+                        'id'=>'demo-form2'
+                    ]) }}
+                        {!! Form::email('email', $value = ' ' , $attributes = ['class' => 'form-control', "placeholder" => trans('messages.pleaseemail')]) !!}
+                        {!! Form::button(trans('messages.subcrice'), ['class' => 'aa-secondary-btn', 'type' => 'submmit']) !!} 
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

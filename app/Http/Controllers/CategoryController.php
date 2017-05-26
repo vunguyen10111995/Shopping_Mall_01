@@ -78,21 +78,9 @@ class CategoryController extends Controller
         return view('admin.category.viewcategory', compact('category', 'parent'));
     }
 
-
     public function optionCategory($id)
     {
-        $productCategory = Product::select(
-            'id',
-            'product_name',
-            'product_image',
-            'cate_id',
-            'price',
-            'saleoff',
-            'start_sale',
-            'end_sale'
-        )->where('cate_id', $id)
-        ->get();
-
+        $productCategory = Product::where('cate_id', $id)->paginate(8);
         $category = Categories::category();
         $factories = Factory::factory();
 

@@ -14,6 +14,7 @@
         'saveup40' => 'Save Up to 40% Off',
         'wriswatch' => 'Wristwatch Collection',
         'jeans' => 'Jeans Collection',
+        'totalpage' => 'Total page',
         'exclusive shoes' => 'Exclusive Shoes',
         'saveup50' => 'Save Up to 50% Off',
         'bestcollection' => 'Best Collection',
