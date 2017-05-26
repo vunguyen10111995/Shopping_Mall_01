@@ -1,4 +1,4 @@
-<?php 
+<?php
     return [
         'gioithieu' => 'Giới thiệu về chúng tôi',
         'congty' => 'Công ty Cổ phần Thương mại và Dịch vụ Hoàng Anh thành lập năm 1997 hoạt động trong lĩnh vực sản xuất hàng thời trang xuất khẩu với các sản phẩm chủ yếu làm từ len, sợi. Năm 2001, thương hiệu thời trang skyShop được ra đời nhằm khai thác nhu cầu đang tăng lên của thị trưởng nội địa bằng các dòng sản phẩm len, sợi với mẫu mã phong phú và chất lượng cao. Với nỗ lực không ngừng trong việc đa dạng hoá các dòng sản phẩm để phục vụ nhu cầu ngày càng cao của Quý khách hàng, đến nay skyShop đã có các dòng sản phẩm:',
@@ -18,6 +18,7 @@
         'saveup50' => 'Save Up to 50% Off',
         'bestcollection' => 'Best Collection',
         'men' => 'Men',
+        'category' => 'Category',
         'women' => 'Women',
         'sports' => 'Sports',
         'electronics' => 'Electronics',
@@ -30,6 +31,7 @@
         'sale' => 'SALE!',
         'soldout' => 'Sold Out!',
         'hot' => 'Hot',
+        'factory' => 'Factory',
         'hello' => 'Welcom: ',
         'logout' => 'Logout',
         'register' => 'Register',
@@ -81,4 +83,14 @@
         'shop' => 'Shop',
         'your shopping' => 'Your Shopping Partner',
         'subscribe' => 'Subscribe our newsletter',
+        'sort' => 'Sort by',
+        'name' => 'Name',
+        'date' => 'Date',
+        'show' => 'Show',
+        '12' => '12',
+        '24' => '24',
+        '36' => '36',
+        'sale' => 'Sale',
+        'price' => 'Price',
+        'default' => 'Default',
     ];

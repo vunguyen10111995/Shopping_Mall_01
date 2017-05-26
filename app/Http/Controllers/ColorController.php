@@ -51,7 +51,7 @@ class ColorController extends Controller
         $color = Colors::where('id', $request->id)
                        ->select('id', 'color_name', 'status', 'created_at', 'updated_at')->get();
         $parent = Colors::select('color_name', 'id', 'status')->get()->toArray();
-        
+
         return view('admin.Color.viewcolor', compact('color', 'parent'));
     }
     public function update($id, Request $request)

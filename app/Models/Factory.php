@@ -19,4 +19,11 @@ class Factory extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function scopeFactory($query)
+    {
+        $factory = $query->get();
+
+        return $factory;
+    }
 }
