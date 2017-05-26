@@ -41,39 +41,75 @@
                     <div class="aa-product-catg-body">
                         <ul class="aa-product-catg">
                             @foreach( $product as $productfactory)
-                            <li>
-                                <figure>
-                                    <a class="aa-product-img" href="#"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 300px;"></a>
-                                    <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
-                                    <figcaption>
-                                        <h4 class="aa-product-title"><a href="#">{{ $productfactory->product_name }}</a></h4>
-                                        <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
-                                        <p class="aa-product-descrip">{{ $productfactory->description }}</p>
-                                    </figcaption>
-                                </figure>
-                                <div class="aa-product-hvr-content search">
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                    <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{
-                                        $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
-                                    </div>
-                                    <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>
-                                </li>
-                                @endforeach
-                            </ul>
+                                @if ($productfactory->saleoff == 0)
+                                    <li>
+                                        <figure>
+                                            <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
+                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <figcaption>
+                                                <h4 class="aa-product-title"><a href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}">{{ $productfactory->product_name }}</a></h4>
+                                                <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
+                                                <p class="aa-product-descrip">{{ $productfactory->description }}</p>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="aa-product-hvr-content search">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                            <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
+                                        </div>
+                                    </li>
+                                    @else
+                                    <li>
+                                        <figure>
+                                            <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
+                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <figcaption>
+                                                <h4 class="aa-product-title"><a href="">{{ $productfactory->product_name }}</a></h4>
+                                                <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
+                                                <p class="aa-product-descrip">{{ $productfactory->description }}</p>
+                                            </figcaption>
+                                        </figure>
+                                        <div class="aa-product-hvr-content search">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                            <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
+                                        </div>
+                                            <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                                <div class="clearfix"></div>
+                                {{ trans('fontend.totalpage') }}: {!! $product->lastPage() !!}
+                                <div class="clearfix"></div>
+                                <ul class="pagination">
+                                    @if ($product->currentPage() != 1)
+                                    <li><a href="{{ str_replace('/?', '?', $product->url($product->currentPage() - 1)) }}">&laquo;</a></li>
+                                    @endif
+                                    @for ( $i = 1; $i <= $product->lastPage(); $i = $i + 1)
+                                    <li class="{!! ($product->currentPage() == $i) ? 'active' : '' !!}">
+                                        <a href="{{ str_replace('/?', '?', $product->url($i)) }}">{{ $i }}</a>
+                                    </li>
+                                    @endfor
+                                    @if ($product->currentPage() != $product->lastPage())
+                                    <li>
+                                        <a href="{{ str_replace('/?', '?', $product->url($product->currentPage() + 1)) }}">&raquo;</a>
+                                    </li>
+                                    @endif 
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
-                    <aside class="aa-sidebar">
-                        @include('frontend.blocks.factory')
-                    </aside>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-md-pull-9">
+                        <aside class="aa-sidebar">
+                            @include('frontend.blocks.factory')
+                        </aside>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    @include('frontend.blocks.section-subscribe')
+        </section>
+        @include('frontend.blocks.section-subscribe')
 
-    @include('frontend.blocks.footer')
+        @include('frontend.blocks.footer')
 
-    @include('frontend.blocks.important')
+        @include('frontend.blocks.important')

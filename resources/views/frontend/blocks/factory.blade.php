@@ -1,7 +1,12 @@
 <div class="aa-sidebar-widget">
     <h3>{{ trans('fontend.category') }}</h3>
     <ul class="aa-catg-nav">
-        <li><a href="#">{{ trans('fontend.men') }}</a></li>
+        @foreach( $category as $value )
+            @foreach($value->child as $child)
+                    <li><a href="{!! url('option-category', [$child->id,$child->cate_name])!!}">{!! $child->cate_name !!}</a>
+                    </li> 
+            @endforeach
+        @endforeach
     </ul>
 </div>
 <div class="aa-sidebar-widget">
@@ -12,4 +17,3 @@
         @endforeach
     </ul>
 </div>
-

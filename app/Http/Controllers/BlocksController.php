@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Categories;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use Mail;
+use App\Models\Subcrice;
 
 class BlocksController extends Controller
 {
@@ -34,8 +36,18 @@ class BlocksController extends Controller
 
     public function store(ContactRequest $request)
     {
-
         $contact = new Contact;
+        $category = Categories::category();
+        $product = Product::product();
+
+        $email = $request->email;
+        Mail::send('mail.mail', [
+            'name' => $request->name,
+            'email' => $request->email
+        ], function ($message) use ($email) {
+            $message->to($email, 'Reply')->subject('Cảm ơn bạn đã liên hệ với chúng tôi!');
+        });
+
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->subject = $request->txtSubject;
@@ -43,10 +55,23 @@ class BlocksController extends Controller
         $contact->message = $request->txtMessage;
         $contact->status = 1;
         $contact->save();
-        
-        $category = Categories::category();
-        $product = Product::product();
 
         return view('frontend.blocks.contact', compact('category', 'product'));
+    }
+
+    public function subcrice(Request $request)
+    {
+        $subCrice = new Subcrice;
+        $category = Categories::category();
+        $product = Product::product();
+        $email = $request->email;
+
+        Mail::send('mail.subcrice', [
+            'email' => $request->email
+        ], function ($message) use ($email) {
+            $message->to($email, 'Reply')->subject('Cảm ơn bạn đã liên hệ với chúng tôi!');
+        });
+
+        return view('frontend.index', compact('category', 'product'));
     }
 }
