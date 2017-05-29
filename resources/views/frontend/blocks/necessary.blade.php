@@ -11,3 +11,4 @@
     <link href="{!! asset('frontend/css/style.css') !!}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{!! asset('admin/sweetalert/dist/sweetalert.css') !!}">

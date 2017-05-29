@@ -45,7 +45,7 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
-                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <a class="aa-add-card-btn" href="{{ url('addcart', [ $productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
                                             <figcaption>
                                                 <h4 class="aa-product-title"><a href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}">{{ $productfactory->product_name }}</a></h4>
                                                 <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
@@ -62,7 +62,7 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
-                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <a class="aa-add-card-btn" href="{{ url('addcart', [ $productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
                                             <figcaption>
                                                 <h4 class="aa-product-title"><a href="">{{ $productfactory->product_name }}</a></h4>
                                                 <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>

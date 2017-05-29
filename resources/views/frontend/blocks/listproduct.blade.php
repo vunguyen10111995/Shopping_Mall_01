@@ -43,7 +43,7 @@
                                 <li>
                                     <figure>
                                     <a class="aa-product-img" href="{{ url('detail-product', [$item->id, $item->product_name]) }}"><img src="{!! $item->product_image !!}" alt="polo shirt img"  style="height: 330px;"></a>
-                                        <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                        <a class="aa-add-card-btn" href="{{ url('detail-product', [$item->id, $item->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
                                             <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span><span class="aa-product-price"><del>{{ trans('fontend.65,50s') }}</del></span>
@@ -58,8 +58,8 @@
                                 @else
                                 <li>
                                     <figure>
-                                        <a class="aa-product-img" href="{{ url('detail-product', [$item->id, $item->product_name]) }}"><img src="{!!  $item->product_image !!}" alt="polo shirt img"  style="height: 330px;"></a>
-                                        <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                        <a class="aa-product-img" href="{{ url('detail-product', [$item->id, $item->product_name]) }}"><img src="{!! $item->product_image !!}" alt="polo shirt img"  style="height: 330px;"></a>
+                                        <a class="aa-add-card-btn" href=" {{ url('detail-product', [$item->id, $item->product_name]) }}"> <span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
                                             <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span><span class="aa-product-price"><del>{{ trans('fontend.65,50s') }}</del></span>
