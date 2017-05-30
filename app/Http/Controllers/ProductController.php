@@ -17,7 +17,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $categories = Product::listProduct();
+        $categories = Product::paginate(8);
 
         return view('admin.product.listproduct', compact('product', 'parent', 'categories'));
     }
@@ -172,5 +172,13 @@ class ProductController extends Controller
                 'color',
                 'productCate'
             ));
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $product = Product::search($request->searchproduct)->paginate(8);
+        $category = Categories::category();
+
+        return view('frontend.blocks.search', compact('product', 'category'));
     }
 }

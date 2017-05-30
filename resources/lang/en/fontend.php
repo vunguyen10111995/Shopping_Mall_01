@@ -20,6 +20,8 @@
         'cvc' => 'Cvc',
         'expm' => 'Exp Month',
         'infor' => 'Information',
+        'contact1' => 'THANK YOU ! YOUR MESSAGE HAS BEEN SEND!',
+        'pleasecontact' => 'PLEASE INPUT YOUR MESSAGE',
         'expy' =>'Exp Year',
         'online' => 'Online',
         'wish' => 'Wish Lish',

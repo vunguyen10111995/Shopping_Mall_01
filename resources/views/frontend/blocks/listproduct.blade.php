@@ -46,7 +46,7 @@
                                         <a class="aa-add-card-btn" href="{{ url('detail-product', [$item->id, $item->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
-                                            <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span><span class="aa-product-price"><del>{{ trans('fontend.65,50s') }}</del></span>
+                                            <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span>
                                         </figcaption>
                                     </figure>
                                     <div class="aa-product-hvr-content">
@@ -62,7 +62,7 @@
                                         <a class="aa-add-card-btn" href=" {{ url('detail-product', [$item->id, $item->product_name]) }}"> <span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
-                                            <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span><span class="aa-product-price"><del>{{ trans('fontend.65,50s') }}</del></span>
+                                            <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span>
                                         </figcaption>
                                     </figure>
                                     <div class="aa-product-hvr-content">

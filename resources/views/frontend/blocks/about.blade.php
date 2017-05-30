@@ -1,9 +1,7 @@
-<link href="{!! asset('bower_components/fontawesome/css/font-awesome.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/bootstrap.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/slick.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/theme-color/default-theme.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/style.css') !!}" rel="stylesheet">
+@include('frontend.blocks.necessary')
+
 @include('frontend.blocks.header')
+
 @include('frontend.blocks.section-menu')
 <div class="container">
     <section id="aa-blog-archive">
@@ -35,10 +33,8 @@
         </div>
     </section>
 </div>
+@include('frontend.blocks.section-subscribe')
+
 @include('frontend.blocks.footer')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="{!! asset('frontend/js/bootstrap.js') !!}"></script>
-<script src="{!! asset('frontend/js/jquery.simpleGallery.js') !!}"></script>
-<script src="{!! asset('frontend/js/jquery.simpleLens.js') !!}"></script>
-<script src="{!! asset('frontend/js/slick.js') !!}"></script>
-<script src="{!! asset('frontend/js/custom.js') !!}"></script>
+
+@include('frontend.blocks.important')

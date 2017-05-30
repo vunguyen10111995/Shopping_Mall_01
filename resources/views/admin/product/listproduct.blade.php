@@ -126,6 +126,25 @@
         @endforeach
     </tbody>
 </table>
+ <div class="clearfix"></div>
+    {{ trans('fontend.totalpage') }}: {!! $categories->lastPage() !!}
+    <div class="clearfix"></div>
+    <ul class="pagination">
+        @if ($categories->currentPage() != 1)
+        <li><a href="{{ str_replace('/?', '?', $categories->url($categories->currentPage() - 1)) }}">&laquo;</a></li>
+        @endif
+        @for ( $i = 1; $i <= $categories->lastPage(); $i = $i + 1)
+        <li class="{!! ($categories->currentPage() == $i) ? 'active' : '' !!}">
+            <a href="{{ str_replace('/?', '?', $categories->url($i)) }}">{{ $i }}</a>
+        </li>
+        @endfor
+        @if ($categories->currentPage() != $categories->lastPage())
+        <li>
+            <a href="{{ str_replace('/?', '?', $categories->url($categories->currentPage() + 1)) }}">&raquo;</a>
+        </li>
+        @endif
+    </ul>
+<br/>
 <a href="{{ action('ProductController@create') }}" class="btn btn btn-primary ">
     {{ trans('backend.add') }}<i class="fa fa-plus" aria-hidden="true"></i>
 </a>
