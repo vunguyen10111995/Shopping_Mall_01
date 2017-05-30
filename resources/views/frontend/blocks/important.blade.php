@@ -7,6 +7,9 @@
 <script src="{!! asset('frontend/js/slick.js') !!}"></script>
 <script src="{!! asset('frontend/js/nouislider.js') !!}"></script>
 <script src="{!! asset('frontend/js/custom.js') !!}"></script>
-<script src="{!! asset('frontend/js/mai.js') !!}"></script>
+<script src="{!! asset('js/cart.js') !!}"></script>
+<script src="{!! asset('admin/js/main1.js') !!}"></script>
+<script src="{!! asset('admin/sweetalert/dist/sweetalert.min.js')!!}"></script>
+<script src="{!! asset('js/checkcart.js') !!}"></script>
 </body>
 </html>

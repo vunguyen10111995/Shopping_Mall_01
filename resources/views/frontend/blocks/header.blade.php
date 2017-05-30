@@ -11,7 +11,7 @@
                         <div class="aa-header-top-right">
                             <ul class="aa-head-top-nav-right">
                                 <li class="hidden-xs"><a href="wishlist.html">{{ trans('fontend.wishlist') }}</a></li>
-                                <li class="hidden-xs"><a href="cart.html">{{ trans('fontend.mycart') }}</a></li>
+                                <li class="hidden-xs"><a href="{!! url('cart') !!}">{{ trans('fontend.mycart') }}</a></li>
                                 <li class="hidden-xs"><a href="checkout.html">{{ trans('fontend.checkout')}}</a></li>
                                     @if (Auth::check())
                                     <li>{!! Auth::user()->name !!}</li> |
@@ -43,7 +43,7 @@
                             <a class="aa-cart-link" href="#">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">{{ trans('fontend.shoppingcart') }}</span>
-                                <span class="aa-cart-notify">{{ trans('fontend.so') }}</span>
+                                <span class="number aa-cart-notify">{{ $count }}</span>
                             </a>
                             <div class="aa-cartbox-summary">
                                 <ul>

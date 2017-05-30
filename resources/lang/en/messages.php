@@ -14,6 +14,7 @@
        'contact' => 'Contact',
        'company' => 'Company',
        'subcrice' => 'Subcrice',
+       'byproduct' => 'Shopping',
        'hello' => 'Xin chao ban',
        'welcome' => 'Cảm ơn bạn đã đăng ký trang web của chúng tôi!',
        'thankfor' => 'Cảm ơn bạn đã liên hệ với chúng tôi!',

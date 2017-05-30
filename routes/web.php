@@ -55,6 +55,18 @@ Route::get('option-category/{id}/{cate_name}', ['as' => 'optioncate', 'uses' => 
 //Detail Product 
 Route:: get('detail-product/{id}/{cate_name}', ['as' => 'detailproduct', 'uses' => 'ProductController@detailProduct']);
 Route::get('listfactory/{id}', ['as' => 'factory', 'uses' => 'ProductController@listfactory']);
+// Cart
+Route::post('addcart/{id}/{tensanpham}', ['as' => 'muahang', 'uses' => 'BlocksController@addCart']);
+Route::get('cart', ['as' => 'cart', 'uses' => 'BlocksController@cart']);
+Route::get('delete-cart/{id}', ['as' => 'delete', 'uses' => 'BlocksController@deleteCart']);
+Route::get('update-cart/{id}/{qty}', ['as' => 'updateCart', 'uses' => 'BlocksController@updateCart']);
+//PaymentShopp
+Route::get('payment-shop', ['as' => 'payment-shop', 'uses' => 'BlocksController@paymentShop']);
+Route::post('payment-shopping', ['as' => 'payment-shopping', 'uses' => 'BlocksController@paymentShopping']);
+// wish list
+Route::get('wishlist', ['as' => 'wishlist', 'uses' => 'BlocksController@wishList']);
+Route::post('addwish/{id}/{tensanpham}', ['as' => 'addwish', 'uses' => 'BlocksController@addWish']);
+Route::get('delete-wish/{id}', ['as' => 'delete', 'uses' => 'BlocksController@deleteWish']);
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('backend', 'BlocksController@index');
