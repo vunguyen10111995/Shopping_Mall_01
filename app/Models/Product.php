@@ -7,11 +7,14 @@ use App\Models\Colors;
 use App\Models\Size;
 use App\Models\Factory;
 use App\Models\Categories;
+use Laravel\Scout\Searchable;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use Searchable;
+
     protected $data = [
         'create_at',
         'update_at',
@@ -34,6 +37,18 @@ class Product extends Model
         'point',
         'point_count',
      ];
+
+    public function searchableAs()
+    {
+        return 'product';
+    }
+
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        return $array;
+    }
 
     public $timestamp = true;
 

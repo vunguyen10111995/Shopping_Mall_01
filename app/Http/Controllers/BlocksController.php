@@ -64,7 +64,8 @@ class BlocksController extends Controller
         $contact->status = 1;
         $contact->save();
 
-        return view('frontend.blocks.contact', compact('category', 'product'));
+        return view('frontend.blocks.contact', compact('category', 'product'))
+            ->with(['flash_level' => 'success', 'flash_message' => trans('messages.success')]);
     }
 
     public function subcrice(Request $request)
@@ -80,7 +81,8 @@ class BlocksController extends Controller
             $message->to($email, 'Reply')->subject('Cảm ơn bạn đã liên hệ với chúng tôi!');
         });
 
-        return view('frontend.index', compact('category', 'product'));
+        return view('frontend.index', compact('category', 'product'))
+            ->with(['flash_level' => 'success', 'flash_message' => trans('messages.success')]);
     }
 
     public function addCart($id, Request $request)
@@ -191,6 +193,8 @@ class BlocksController extends Controller
                     $message->to($email, 'Reply')
                         ->subject('Cảm ơn bạn đã đặt hàng tại shop của chúng tôi!!');
                 });
+
+            Cart::destroy();
 
             return redirect()->route('payment-shop')
                 ->with(['flash_level' => 'success', 'flash_message' => trans('messages.success')]);

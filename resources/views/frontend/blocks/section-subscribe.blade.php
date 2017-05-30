@@ -4,7 +4,11 @@
             <div class="col-md-12">
                 <div class="aa-subscribe-area">
                     <h3>{{ trans('fontend.subscribe') }}</h3>
-                    <p>{{ trans('fontend.loremispum') }}</p>
+                    <div class="col-md-4 col-md-offset-4">
+                          @if (Session::has('flash_message'))
+                        <div class="alert alert-success" role="alert"><h4 class="text-center">{{ trans('fontend.ordersusses') }}</h4></div>
+                           @endif
+                    </div>
                     {{ Form::open([
                         'method' => 'POST',
                         'action' => 'BlocksController@subcrice',

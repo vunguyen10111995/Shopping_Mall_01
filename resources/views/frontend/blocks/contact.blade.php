@@ -1,11 +1,9 @@
-<link href="{!! asset('bower_components/fontawesome/css/font-awesome.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/bootstrap.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/slick.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/theme-color/default-theme.css') !!}" rel="stylesheet">
-<link href="{!! asset('frontend/css/style.css') !!}" rel="stylesheet">
-</head>
+@include('frontend.blocks.necessary')
+
 @include('frontend.blocks.header')
+
 @include('frontend.blocks.section-menu')
+
 <section id="aa-catg-head-banner">
     <img src="{!! asset('frontend/img/fashion/fashion-header-bg-8.jpg') !!}" alt="fashion img" style="height: 80%">
     <div class="aa-catg-head-banner-area">
@@ -34,6 +32,11 @@
                     <div class="aa-contact-address">
                         <div class="row">
                             <div class="col-md-8">
+                            @if (Session::has('flash_message'))
+                            <div class="alert alert-success" role="alert"><h4 class="text-center">{{ trans('fontend.contact1') }}</h4></div>
+                            @else
+                            <div class="alert alert-success" role="alert"><h4 class="text-center">{{ trans('fontend.pleasecontact') }}</h4></div>
+                            @endif()
                                 <div class="aa-contact-address-left">
                                     {{ Form::open([
                                         'method' => 'POST',
@@ -44,7 +47,7 @@
                                         <div class="row">
                                             <div class="error">
                                                 @if ($errors->has('name'))
-                                                    <span class="label label-danger">
+                                                    <span class="labelname label label-danger">
                                                         <strong>{{ $errors->first('name') }}</strong>
                                                     </span>
                                                 @endif
@@ -125,11 +128,9 @@
             </div>
         </div>
     </section>
-    @include('frontend.blocks.section-subscribe')
-    @include('frontend.blocks.footer')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-    <script src="{!! asset('frontend/js/bootstrap.js') !!}"></script>
-    <script src="{!! asset('frontend/js/jquery.simpleGallery.js') !!}"></script>
-    <script src="{!! asset('frontend/js/jquery.simpleLens.js') !!}"></script>
-    <script src="{!! asset('frontend/js/slick.js') !!}"></script>
-    <script src="{!! asset('frontend/js/custom.js') !!}"></script>
+@include('frontend.blocks.section-subscribe')
+
+@include('frontend.blocks.footer')
+
+@include('frontend.blocks.important')
+

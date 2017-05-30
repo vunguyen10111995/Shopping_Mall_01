@@ -96,3 +96,5 @@ Route::group(['middleware' => 'admin'], function () {
     //Payment
     Route::resource('Payment', 'PaymentController');
 });
+
+Route::post('/search', ['as' => 'searchproduct', 'uses' => 'ProductController@searchProduct']);
