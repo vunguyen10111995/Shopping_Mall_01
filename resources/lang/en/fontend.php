@@ -136,4 +136,5 @@
         'sale' => 'Sale',
         'price' => 'Price',
         'default' => 'Default',
+        'see' => 'See more products'
     ];
