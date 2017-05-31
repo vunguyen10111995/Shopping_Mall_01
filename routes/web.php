@@ -52,7 +52,7 @@ Route::get('/', 'HomeController@index');
 Route::get('pro-search', 'HomeController@searchpro')->name('search.pro');
 //Option  Category
 Route::get('option-category/{id}/{cate_name}', ['as' => 'optioncate', 'uses' => 'CategoryController@optionCategory']);
-//Detail Product 
+//Detail Product
 Route:: get('detail-product/{id}/{cate_name}', ['as' => 'detailproduct', 'uses' => 'ProductController@detailProduct']);
 Route::get('listfactory/{id}', ['as' => 'factory', 'uses' => 'ProductController@listfactory']);
 // Cart
@@ -96,5 +96,5 @@ Route::group(['middleware' => 'admin'], function () {
     //Payment
     Route::resource('Payment', 'PaymentController');
 });
-
+Route::get('productajax/{id}', ['as'=> 'productajax', 'uses' => 'ProductController@productajax']);
 Route::post('/search', ['as' => 'searchproduct', 'uses' => 'ProductController@searchProduct']);
