@@ -30,6 +30,7 @@
         'nameproduct' => 'Name Product',
         'qty' => 'Quantity',
         'delete' => 'Delete',
+        'commment' => 'Comment',
         'ordersusses' => 'Order Success',
         'order1' => 'Here is your detailed invoice!',
         'thankcustomer' => 'Thank you for your order at our shop',
@@ -137,5 +138,9 @@
         'sale' => 'Sale',
         'price' => 'Price',
         'default' => 'Default',
-        'see' => 'See more products'
+        'see' => 'See more products',
+        'post' => 'Post a comment',
+        'write' => 'Write a comment',
+        'view' => 'View& Comment ',
+        'edit' => 'Edit',
     ];

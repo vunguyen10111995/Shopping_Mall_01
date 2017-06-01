@@ -7,10 +7,10 @@
                         <div class="aa-product-inner">
                             <ul class="nav nav-tabs aa-products-tab">
                                 @foreach ($categories as $category)
-                                <li><a data-href="{!! action('ProductController@productajax', $category->id )!!}" data-toggle="tab" class="category" id="category{{$category->id}}" cate_id="{{$category->id}}">{!! $category->cate_name !!}</a></li>
+                                  <li><a data-href="{!! action('ProductController@productajax', $category->id )!!}" data-toggle="tab" class="category" id="category{{$category->id}}" cate_id="{{$category->id}}">{!! $category->cate_name !!}</a></li>
                                 @endforeach
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content ">
                                 <div class="tab-pane fade in active" id="show_product">
                                     <ul class="aa-product-catg">
                                         @foreach($productmenu as $value)
@@ -25,8 +25,9 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" ><span class="fa fa-heart-o"></span></a>
-                                                <a href="#" data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" ><span class="fa fa-exchange"></span></a>
+                                                <a data-id={{ $value->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $value->id )!!}"
+                                                 data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                             </div>
                                         </li>
                                         @else
@@ -41,10 +42,11 @@
                                             </figure>
                                             <div class="aa-product-hvr-content">
                                                 <a href="#" data-toggle="tooltip" data-placement="top" ><span class="fa fa-heart-o"></span></a>
-                                                <a href="#" data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                <a data-id={{ $value->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $value->id )!!}"
+                                                 data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                             </div>
                                             <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>
-                                            </li> 
+                                            </li>
                                         @endif
                                         @endforeach
                                 </div>

@@ -54,7 +54,8 @@
                                         </figure>
                                         <div class="aa-product-hvr-content search">
                                             <a href="{{ url('addwish', ['id'=> $productfactory->id, 'tensanpham' => $productfactory->product_name ])}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                            <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
+                                              <a data-id={{ $productfactory->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $productfactory->id )!!}"
+                                                 data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                         </div>
                                     </li>
                                     @else
@@ -70,7 +71,9 @@
                                         </figure>
                                         <div class="aa-product-hvr-content search">
                                             <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                            <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                            <a data-id={{ $productfactory->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $productfactory->id )!!}"
+                                                 data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                         </div>
                                             <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>
                                     </li>
@@ -93,7 +96,7 @@
                                     <li>
                                         <a href="{{ str_replace('/?', '?', $product->url($product->currentPage() + 1)) }}">&raquo;</a>
                                     </li>
-                                    @endif 
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -106,6 +109,7 @@
                 </div>
             </div>
         </section>
+        @include('frontend.blocks.modal')
         @include('frontend.blocks.section-subscribe')
 
         @include('frontend.blocks.footer')
