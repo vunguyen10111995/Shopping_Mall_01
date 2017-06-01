@@ -55,7 +55,7 @@ class Product extends Model
     public function scopeProduct($query)
     {
         $product = $query->select('id', 'product_name', 'product_image', 'price', 'saleoff')
-                         ->orderBy('id', 'DESC')->skip(0)->take(4)->get();
+                         ->orderBy('id', 'DESC')->skip(0)->take(8)->paginate(8);
 
         return  $product;
     }

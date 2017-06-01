@@ -1,4 +1,4 @@
-@include('frontend.blocks.necessary');
+@include('frontend.blocks.necessary')
 
 @include('frontend.blocks.header')
 
@@ -20,7 +20,4 @@
 
 @include('frontend.blocks.footer')
 
-@include('frontend.blocks.important');
-
-</body>
-</html>
+@include('frontend.blocks.important')

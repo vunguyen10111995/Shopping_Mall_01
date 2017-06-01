@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cartalyst\Stripe\Stripe;
 
 class Payment extends Model
 {
@@ -11,6 +12,8 @@ class Payment extends Model
         'payment_name',
         'status',
     ];
+
+    public $stripe = new Stripe();
 
     public $timestamp = false;
     

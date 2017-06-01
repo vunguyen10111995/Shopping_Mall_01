@@ -164,22 +164,21 @@
                                                     </div>
                                                     <h4>{{ trans('fontend.method') }}</h4>
                                                     <div>
-                                                        {!! Form::radio('payment', NULL, $attribute = [ "placeholder" => trans('backend.pleasezise'), "required" => "required"]) !!}
-                                                        {{ trans('fontend.normal') }}
-                                                        {!! Form::radio('payment', NULL, $attribute = [ "placeholder" => trans('backend.pleasezise'), "required" => "required"]) !!}
-                                                        {{ trans('fontend.online') }}
+                                                     {!! Form::radio('payment', '1', $attribute = [ "placeholder" => trans('backend.pleasezise'), "required" => "required"]) !!}
+                                                       {{ trans('fontend.online') }}
+                                                        {!! Form::radio('payment', '2', $attribute = [ "placeholder" => trans('backend.pleasezise'), "required" => "required"]) !!}
+                                                         {{ trans('fontend.normal') }}
                                                     </div>
                                                     <br/>
                                                     <div id="online" >
-                                                    {{ trans('fontend.carnumber') }}
-                                                     {!! Form::text('cartnumber', NULL , ['class' => 'aa-checkout-single-bill']) !!}
-                                                    {{ trans('fontend.cvc') }}
-                                                        {!! Form::text('cvc', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
-                                                    {{ trans('fontend.expm') }}
-                                                        {!! Form::text('expmonth', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
-                                                    {{ trans('fontend.expy') }}
-                                                        {!! Form::text('extyear', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
-                                                     
+                                                        {{ trans('fontend.carnumber') }}
+                                                         {!! Form::text('cartnumber', NULL , ['class' => 'aa-checkout-single-bill']) !!}
+                                                        {{ trans('fontend.cvc') }}
+                                                            {!! Form::text('cvc', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
+                                                        {{ trans('fontend.expm') }}
+                                                            {!! Form::text('expmonth', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
+                                                        {{ trans('fontend.expy') }}
+                                                            {!! Form::text('extyear', $value = ' ' , ['class' => 'aa-checkout-single-bill']) !!}
                                                     </div>
                                                 </div>
                                             </div>
