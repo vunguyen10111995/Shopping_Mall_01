@@ -91,12 +91,7 @@ class Product extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
-    }
-
-    public function ranks()
-    {
-        return $this->hasMany(Rank::class);
+        return $this->hasMany(Comment::class)->where('parent_id', null)->orderBy('id', 'DESC');
     }
 
     public function orderDetails()

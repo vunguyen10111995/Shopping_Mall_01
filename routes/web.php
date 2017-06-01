@@ -98,3 +98,13 @@ Route::group(['middleware' => 'admin'], function () {
 });
 Route::get('productajax/{id}', ['as'=> 'productajax', 'uses' => 'ProductController@productajax']);
 Route::post('/search', ['as' => 'searchproduct', 'uses' => 'ProductController@searchProduct']);
+Route::get('comment', ['as'=> 'comment', 'uses' => 'CommentController@postComment']);
+Route::get('reply', ['as'=> 'reply', 'uses' => 'CommentController@postReply']);
+Route::get('editComment', 'CommentController@updateComment');
+Route::get('editReply', 'CommentController@updateReply');
+Route::get('comment/{commentId}/delete', [
+        'as' => 'comment.delete',
+        'uses' => 'CommentController@destroy',
+    ]);
+Route::get('ajax/{id}', ['as'=> 'ajax', 'uses' => 'ProductController@ajax']);
+Route::get('productajax/{id}', ['as'=> 'ajax', 'uses' => 'ProductController@productajax']);

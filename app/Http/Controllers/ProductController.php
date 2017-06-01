@@ -150,7 +150,7 @@ class ProductController extends Controller
     public function productajax($id)
     {
 
-         $product =DB::table('products')->where('cate_id', $id)->get();
+         $product = DB::table('products')->where('cate_id', $id)->get();
 
         return view('frontend.blocks.viewproduct', ['product' => $product]);
     }
@@ -165,9 +165,9 @@ class ProductController extends Controller
             "image1" => $product->product_image,
             "desc" => $product->content
          ];
-
          return response()->json($result);
     }
+
 
     public function detailProduct($id)
     {

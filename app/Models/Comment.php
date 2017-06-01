@@ -17,10 +17,19 @@ class Comment extends Model
         'status',
     ];
 
-    public $timestamp = false;
+    public $timestamp = true;
 
     public function product()
     {
         return $this->belongTo(Product::class);
+    }
+
+    public function child()
+    {
+        return $this->hasMany(Comment::class, 'parent_id', 'id');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 }
