@@ -18,6 +18,7 @@
         'totalpage' => 'Total page',
         'carnumber' => 'Card Number',
         'cvc' => 'Cvc',
+        'search' => 'Search',
         'expm' => 'Exp Month',
         'infor' => 'Information',
         'contact1' => 'THANK YOU ! YOUR MESSAGE HAS BEEN SEND!',

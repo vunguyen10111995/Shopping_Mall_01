@@ -30,9 +30,10 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
+        'model' => App\Models\Subscriptions::class,
+        'key' => env('pk_test_92wDBFurPkHR9bUMQeLhZXqE'),
+        'secret' => env('sk_test_qAraHRakXmPIeVZwg3YmLRoI
+'),
     ],
 
     'facebook' => [

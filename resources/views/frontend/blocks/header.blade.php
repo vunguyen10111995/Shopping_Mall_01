@@ -40,41 +40,25 @@
                             </a>
                         </div>
                         <div class="aa-cartbox">
-                            <a class="aa-cart-link" href="#">
+                            <a class="aa-cart-link" href="{!! url('payment-shop') !!}">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">{{ trans('fontend.shoppingcart') }}</span>
                                 <span class="number aa-cart-notify">{{ $count }}</span>
                             </a>
-                            <div class="aa-cartbox-summary">
-                                <ul>
-                                    <li>
-                                        <a class="aa-cartbox-img" href="#"><img src="{!! url('frontend/img/woman-small-2.jpg') !!}" alt="img"></a>
-                                        <div class="aa-cartbox-info">
-                                            <h4><a href="#">{{ trans('fontend.product_name') }}</a></h4>
-                                            <p>{{ trans('fontend.1 x $250') }}</p>
-                                        </div>
-                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                    </li>
-                                    <span class="aa-cartbox-total-title">
-                                        {{ trans('fontend.total') }}
-                                    </span>
-                                    <span class="aa-cartbox-total-price">
-                                        {{ trans('fontend.$500') }}
-                                    </span>
-                                </li>
-                            </ul>
-                            <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">{{ trans('fontend.checkout') }}</a>
                         </div>
-                    </div>
-                    <div class="aa-search-box">
-                        {{ Form::open([
-                                    'method' => 'POST',
-                                    'route' => 'searchproduct'
-                                    ]) }} 
-                            <input type="text" name="searchproduct" placeholder="Search product!">
-                            <button type="submit"><span class="fa fa-search"></span></button>
-                        {{ Form::close() }}
-                    </div>        
+                        <div class="aa-search-box">
+                            {{ Form::open([
+                                        'method' => 'POST',
+                                        'route' => 'searchproduct'
+                                        ]) }} 
+                                {!! Form::text('searchproduct', $value = null, 
+                                    $attribute = [
+                                        'class' => 'form-control col-md-7 col-xs-12', 
+                                        "placeholder" => trans('fontend.search')
+                                    ]) !!}        
+                                <button type="submit"><span class="fa fa-search"></span></button>
+                            {{ Form::close() }}
+                        </div>        
                 </div>
             </div>
         </div>

@@ -45,16 +45,15 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
-                                            <a class="aa-add-card-btn" href="{{ url('addcart', [ $productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <a class="aa-add-card-btn" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                             <figcaption>
                                                 <h4 class="aa-product-title"><a href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}">{{ $productfactory->product_name }}</a></h4>
                                                 <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
-                                                <p class="aa-product-descrip">{{ $productfactory->description }}</p>
+                                                <p class="aa-product-descrip">{!! $productfactory->description !!}</p>
                                             </figcaption>
                                         </figure>
                                         <div class="aa-product-hvr-content search">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                            <a href="{{ url('addwish', ['id'=> $productfactory->id, 'tensanpham' => $productfactory->product_name ])}}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                                             <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
                                         </div>
                                     </li>
@@ -62,16 +61,15 @@
                                     <li>
                                         <figure>
                                             <a class="aa-product-img" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><img src="{{ $productfactory->product_image }}" alt="{{ $productfactory->product_name }}" style="height: 250px;"></a>
-                                            <a class="aa-add-card-btn" href="{{ url('addcart', [ $productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.add to cart') }}</a>
+                                            <a class="aa-add-card-btn" href="{{ url('detail-product', [$productfactory->id, $productfactory->product_name]) }}"><span class="fa fa-shopping-cart"></span>{{ trans('fontend.detail') }}</a>
                                             <figcaption>
                                                 <h4 class="aa-product-title"><a href="">{{ $productfactory->product_name }}</a></h4>
                                                 <span class="aa-product-price">{{ $productfactory->price }}</span><span class="aa-product-price"></span>
-                                                <p class="aa-product-descrip">{{ $productfactory->description }}</p>
+                                               <p class="aa-product-descrip">{!! $productfactory->description !!}</p>
                                             </figcaption>
                                         </figure>
                                         <div class="aa-product-hvr-content search">
                                             <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
                                             <a href="#" data-href="" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"  data-id="{{ $productfactory->id }}" class="search"><span class="fa fa-search" ></span></a>
                                         </div>
                                             <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>

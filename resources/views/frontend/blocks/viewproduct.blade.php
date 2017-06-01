@@ -15,7 +15,6 @@
                 <a href="#" data-toggle="tooltip" data-placement="top"><span class="fa fa-exchange"></span></a>
                 <a href="#" data-toggle2="tooltip" data-placement="top" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
             </div>
-            <span class="aa-badge aa-sold-out" href="#">{{ trans('fontend.soldout') }}</span>
         </li>
         @endforeach
     </ul>

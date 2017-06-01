@@ -27,13 +27,14 @@ class AppServiceProvider extends ServiceProvider
         $products = DB::table('products')
                     ->select('product_name', 'product_image', 'price')
                     ->orderby('id', 'DESC')->skip(0)->take(3)->get();
-        $product = Product::all();
-        $productmenu = DB::table('products')
-                       ->select('product_name', 'product_image', 'price', 'id')->skip(0)->take(8)->get();
+                    
+        $product = Product::skip(0)->take(4)->get();
+        $productmenu = DB::table('products')->paginate(8);
         $sale = DB::table('products')
                ->where('saleoff', '>', '0')
                ->orderby('saleoff', 'DESC')
                ->select('product_name', 'product_image', 'price')->skip(0)->take(4)->get();
+               
         $size = Size::all();
         $color = Colors::all();
         $factories = Factory::select('factory_name', 'id')->get();

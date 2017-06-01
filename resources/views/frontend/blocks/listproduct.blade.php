@@ -47,11 +47,11 @@
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
                                             <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span>
+                                             <p class="aa-product-descrip">{!! $item->description !!}</p>
                                         </figcaption>
                                     </figure>
                                     <div class="aa-product-hvr-content">
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
                                         <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
                                     </div>
                                 </li>
@@ -63,12 +63,12 @@
                                         <figcaption>
                                             <h4 class="aa-product-title"><a href="{{ url('detail-product', [$item->id, $item->product_name]) }}">{{ $item->product_name }}</a></h4>
                                             <span class="aa-product-price">${{ number_format($item->price, 0, ",", ".")}}</span>
+                                            <p class="aa-product-descrip">{!! $item->description !!}</p>
                                         </figcaption>
                                     </figure>
                                     <div class="aa-product-hvr-content">
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                           
+                                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                      
                                     </div>
                                     <span class="aa-badge aa-sale" href="#">{{ trans('fontend.sale') }}</span>
                                 </li>
