@@ -161,7 +161,7 @@
                                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                                       <span class="caret"></span></button>
                                                       <ul class="dropdown-menu">
-                                                      @if ($cm['id'] == Auth::user()->id)
+                                                      @if ($cm->user->id == Auth::user()->id)
                                                         <li>
                                                           <a href="" class='edit-comment' id={{ $cm->id }}>{{ trans('fontend.edit') }}</a>
                                                         </li>
@@ -199,9 +199,9 @@
                                                        {!! Form::hidden('parent_id', $cm->id,['id' => 'parent_id']) !!}
                                                        {!! Form::hidden('user_id', Auth::user()->id, ['id' => 'user_id']) !!}
                                                        {!! Form::hidden('product_id', $productDetail->id, ['id' => 'product_id']) !!}
-                                                       <div class="urlreply" data-route="{{ url('reply') }}"></div>
-                                                       <input type="text" name="description"  class="form-control" placeholder={{ trans('fontend.commment')}}  id="desc3">
                                                     @endif
+                                                    <div class="urlreply" data-route="{{ url('reply') }}"></div>
+                                                    <input type="text" name="description"  class="form-control" placeholder={{ trans('fontend.commment')}}  id="desc3">
                                                    </div>
                                                </div>
                                                {{Form::close()}}
@@ -214,7 +214,7 @@
                                                       <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" >
                                                         <span class="caret"></span></button>
                                                         <ul class="dropdown-menu">
-                                                        @if ($cm['id'] == Auth::user()->id)
+                                                        @if ($child->user->id == Auth::user()->id)
                                                           <li><a href="" class='edit-reply' id={{ $child->id }}>{{trans('fontend.edit')}}</a></li>
                                                           <li>
                                                           <a href="{{ action('CommentController@destroy', $child->id) }}" class="delete-comment">{{ trans('fontend.delete') }}</a>
@@ -225,15 +225,14 @@
                                                       @endif
                                                     <div class="comment2" id="comment1">
                                                         <div class="">
-                                                          <div id='edit-reply-aria'></div>
+                                                            <div id="edit-reply-aria"></div>
                                                           <div class="urleditreply" data-route="{{ url('editReply') }}"></div>
-                                                          <p id="content-comment{{ $child->id }}"></p>
                                                          <h4 class="media-heading">{{ $child->user->name }}
                                                             <small>
                                                                 {!! $child->created_at->diffForHumans() !!}
                                                             </small>
                                                             <br/>
-                                                            {{ $child->content }}
+                                                            <p id="content-comment{{ $child->id }}">{{ $child->content }}</p>
                                                         </h4>
                                                     </div>
                                                 </div>

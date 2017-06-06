@@ -25,7 +25,6 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" ><span class="fa fa-exchange"></span></a>
                                                 <a data-id={{ $value->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $value->id )!!}"
                                                  data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                             </div>
@@ -41,7 +40,6 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" ><span class="fa fa-heart-o"></span></a>
                                                 <a data-id={{ $value->id }} href="javascript:Void(0)" data-href="{!! action('ProductController@ajax', $value->id )!!}"
                                                  data-toggle2="tooltip" data-placement="top"  data-toggle="modal" data-target="#quick-view-modal" class="search1"><span class="fa fa-search"></span></a>
                                             </div>
