@@ -24,19 +24,6 @@
                                 <span class="price"></span>
                             </div>
                             <p class="desc"></p>
-                            <h4>{{trans('fontend.size')}}</h4>
-                            <div class="aa-prod-view-size">
-                                @foreach($size as $sizes)
-                                {!! Form::label('size', $name = $sizes->size_name) !!} |
-                                @endforeach
-                            </div>
-                            <h4>{{trans('fontend.color')}}</h4>
-                            <div class="aa-prod-view-size">
-                                @foreach($color as $colors)
-                                {!! Form::label('color', $name = $colors->color_name) !!}
-                                {!! Form::checkbox('color[]', $value = $colors->id,NULL ) !!}
-                                @endforeach
-                            </div>
                         </div>
                     </div>
                 </div>

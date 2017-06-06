@@ -13,25 +13,6 @@
                 <div class="aa-product-catg-content">
                     <div class="aa-product-catg-head">
                         <div class="aa-product-catg-head">
-                            <div class="aa-product-catg-head-left">
-                                <form action="" class="aa-sort-form">
-                                    <label for="">{{ trans('fontend.sort')}}</label>
-                                    <select name="">
-                                        <option value="1" selected="Default">{{ trans('fontend.default') }}</option>
-                                        <option value="2">{{ trans('fontend.name') }}</option>
-                                        <option value="3">{{ trans('fontend.price') }}</option>
-                                        <option value="4">{{ trans('fontend.date') }}</option>
-                                    </select>
-                                </form>
-                                <form action="" class="aa-show-form">
-                                    <label for="">{{ trans('fontend.show')}}</label>
-                                    <select name="">
-                                        <option value="1" selected="12">{{ trans('fontend.12')}}</option>
-                                        <option value="2">{{ trans('fontend.24')}}</option>
-                                        <option value="3">{{ trans('fontend.36')}}</option>
-                                    </select>
-                                </form>
-                            </div>
                             <div class="aa-product-catg-head-right">
                                 <a id="grid-catg" href="#"><span class="fa fa-th"></span></a>
                                 <a id="list-catg" href="#"><span class="fa fa-list"></span></a>
